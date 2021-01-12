@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{route('admin.index')}}">
           <i class="fas fa-fw fa-home"></i>
           <span>Trang chủ</span></a>
       </li>
@@ -36,7 +36,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Quản lý loại sản phẩm</h6>
             <a class="collapse-item" href="{{ route('admin.loai.index') }}">Danh sách</a>
-            <a class="collapse-item" href="">Thêm</a>
+            <a class="collapse-item" href="{{ route('admin.loai.create') }}">Thêm</a>
           </div>
         </div>
       </li>

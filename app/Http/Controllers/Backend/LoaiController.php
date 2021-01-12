@@ -7,7 +7,7 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Loai;
-
+use App\Http\Requests\LoaiCreateRequest;
 
 class LoaiController extends Controller
 {
@@ -32,6 +32,7 @@ class LoaiController extends Controller
     public function create()
     {
         //
+        return view('backend.loai.create');
     }
 
     /**
@@ -40,9 +41,17 @@ class LoaiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoaiCreateRequest $request)
     {
         //
+        $loai = new Loai();
+        $loai->l_ten = $request->l_ten;
+        $loai->l_trangThai = $request->l_trangThai;
+
+        $loai->save();
+
+        Session::flash('alert-success', "Thêm mới thành công !");
+        return redirect()->route('admin.loai.index');
     }
 
     /**
@@ -98,6 +107,10 @@ class LoaiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $loai = Loai::find($id);
+        $loai->delete();
+
+        Session::flash('alert-success', "Xoá thành công !");
+        return redirect(route('admin.loai.index'));
     }
 }

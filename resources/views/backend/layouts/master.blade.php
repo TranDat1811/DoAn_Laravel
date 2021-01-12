@@ -18,9 +18,12 @@
   <!-- Custom styles for this template-->
   <link href="{{ asset('themes/admin_template/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!--Custom css cho tung view  -->
-    @yield('custom-css')
+  <!--Custom css cho tung view  -->
+  @yield('custom-css')
 </head>
 
 <body id="page-top">
@@ -40,6 +43,9 @@
         @include('backend.layouts.partials.header')
         <!-- End of Topbar -->
 
+        <!-- Thông báo lỗi -->
+        @include('backend.layouts.partials.error-message')
+        @include('backend.layouts.partials.flash-message')
         <!-- Main-content -->
         @yield('main-content')
         <!-- End Main-content -->
@@ -95,6 +101,14 @@
   <script src="{{ asset('themes/admin_template/js/demo/chart-area-demo.js')}}"></script>
   <script src="{{ asset('themes/admin_template/js/demo/chart-pie-demo.js')}}"></script>
 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/popperjs/popper.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <!-- sweetalert -->
+    <script src="{{ asset('vendor/sweetalert/sweetalert.js') }}"></script>
+  @yield('custom-js')
 </body>
 
 </html>
