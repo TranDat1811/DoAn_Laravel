@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Session;
+use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Loai;
@@ -62,7 +64,10 @@ class LoaiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $loai = Loai::find($id);
+        return view('backend.loai.edit')
+                ->with('loai', $loai)
+        ;
     }
 
     /**
@@ -74,7 +79,15 @@ class LoaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $loai = Loai::find($id);
+        $loai->l_ten = $request->l_ten;
+        $loai->l_trangThai = $request->l_trangThai;
+        $loai->l_capNhat = $request->l_capNhat;
+
+        $loai->save();
+
+        Session::flash('alert-success', "Sửa thành công !");
+        return redirect()->route('admin.loai.index');
     }
 
     /**
