@@ -33,14 +33,14 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
+						<img src="themes/cozastore/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
+								<a href="/">Home</a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Homepage 1</a></li>
 									<li><a href="home-02.html">Homepage 2</a></li>
@@ -49,7 +49,7 @@
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="{{ route('xuatxu.index') }}">Xuất xứ</a>
 							</li>
 
 							<li class="label1" data-label1="hot">

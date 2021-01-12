@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.layouts.index');
 });
+
+
+Route::get('/xuatxu', 'FrontEnd\XuatXuController@index') -> name('xuatxu.index');
+
+Route::get("/admin", function(){
+    return view('backend.index'); 
+}) -> name('admin.index');
+
+Route::resource('/admin/loai', 'Backend\LoaiController', ['as' => 'admin']);
