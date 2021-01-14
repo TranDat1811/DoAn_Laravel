@@ -37,7 +37,7 @@
 @yield('custom-css')
 </head>
 <body class="animsition">
-	@yield('content')
+	
 	<!-- Header -->
 	@include('frontend.layouts.partials.header')
 

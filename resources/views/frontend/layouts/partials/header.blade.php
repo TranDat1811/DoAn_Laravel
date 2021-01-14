@@ -1,3 +1,4 @@
+
 <header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
@@ -39,33 +40,33 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
+							
 							<li class="active-menu">
-								<a href="/">Home</a>
+								<a href="" >Hãng điện thoại</a>
+								
 								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
+								@foreach($ds_loai as $loai)
+									<li><a href="">{{ $loai-> l_ten }}</a></li>
+								@endforeach
 								</ul>
+								
 							</li>
-
-							<li>
-								<a href="{{ route('xuatxu.index') }}">Xuất xứ</a>
-							</li>
+							
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+								<a href="">Khuyến mãi</a>
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="/baohanh">Bảo hành</a>
 							</li>
 
 							<li>
-								<a href="about.html">About</a>
+								<a href="/gioithieu">About</a>
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="{{route('lienhe')}}">Contact</a>
 							</li>
 						</ul>
 					</div>	

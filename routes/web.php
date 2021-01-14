@@ -23,3 +23,5 @@ Route::get("/admin", function(){
 }) -> name('admin.index');
 
 Route::resource('/admin/loai', 'Backend\LoaiController', ['as' => 'admin']);
+
+Route::post('/lien-he/goi-loi-nhan', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMailContactForm');
