@@ -15,7 +15,8 @@ class CreateCuscXuatXuTable extends Migration
     {
         Schema::create('cusc_xuat_xu', function (Blueprint $table) {
             $table->engine = "InnoDB";
-            $table->integer('xx_ma')->autoIncrement()->comment('Mã xuất xứ');
+            $table->bigInteger('id')->autoIncrement()->comment('STT');
+            $table->integer('xx_ma')->comment('Mã xuất xứ');
             $table->string('xx_ten')->unique()->comment('Xuất xứ #Xuất xứ của sản phẩm');
             $table->timestamp('xx_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm tạo # Thời điểm đầu tiên tạo xuất xứ');
             $table->timestamp('xx_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm cập nhật # Thời điểm cập nhật xuất xứ sản phẩm gần nhất');

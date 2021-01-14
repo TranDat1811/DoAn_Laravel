@@ -24,6 +24,8 @@ class LoaiTableSeeder extends Seeder
             array_push($list, [
                 'l_ma' => $i,
                 'l_ten' => $type[$i-1],
+                'l_mota' => "Mô tả $i",
+                'l_hinhanh' => "loai-$i.jpg",
                 'l_taoMoi' => $today ->format('Y-m-d H:i:s'),
                 'l_capNhat' => $today ->format('Y-m-d H:i:s')
             ]);
