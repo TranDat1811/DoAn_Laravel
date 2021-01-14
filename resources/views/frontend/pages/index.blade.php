@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+Trang chủ
+@endsection
+
 @section('main-content')
     <!-- Slider -->
 	<section class="section-slide">

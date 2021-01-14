@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('frontend.layouts.index');
+    return view('frontend.pages.index');
 });
 
 
@@ -24,4 +24,9 @@ Route::get("/admin", function(){
 
 Route::resource('/admin/loai', 'Backend\LoaiController', ['as' => 'admin']);
 
-Route::post('/lien-he/goi-loi-nhan', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMailContactForm');
+Route::get('/contact', 'Frontend\FrontendController@contact')->name('frontend.pages.contact');
+Route::get('/about', 'Frontend\FrontendController@about')->name('frontend.pages.about');
+Route::get('/service', 'Frontend\FrontendController@service')->name('frontend.pages.service');
+
+
+Route::post('/contact/sendmail', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMail');

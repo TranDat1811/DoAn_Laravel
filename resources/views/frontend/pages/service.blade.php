@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    Giới thiệu
+    Service
 @endsection
 
 

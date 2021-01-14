@@ -33,7 +33,7 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
+					<a href="/" class="logo">
 						<img src="themes/cozastore/images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -45,9 +45,7 @@
 								<a href="" >Hãng điện thoại</a>
 								
 								<ul class="sub-menu">
-								@foreach($ds_loai as $loai)
-									<li><a href="">{{ $loai-> l_ten }}</a></li>
-								@endforeach
+								
 								</ul>
 								
 							</li>
@@ -58,15 +56,15 @@
 							</li>
 
 							<li>
-								<a href="/baohanh">Bảo hành</a>
+								<a href="/service">Bảo hành</a>
 							</li>
 
 							<li>
-								<a href="/gioithieu">About</a>
+								<a href="/about">About</a>
 							</li>
 
 							<li>
-								<a href="{{route('lienhe')}}">Contact</a>
+								<a href="/contact">Contact</a>
 							</li>
 						</ul>
 					</div>	
