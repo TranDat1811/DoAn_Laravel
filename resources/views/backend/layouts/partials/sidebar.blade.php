@@ -50,8 +50,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">Quản lý sản phẩm</h6>
-            <a class="collapse-item" href="">Danh sách</a>
-            <a class="collapse-item" href="">Thêm</a>
+            <a class="collapse-item" href="{{route('admin.sanpham.index')}}">Danh sách</a>
+            <a class="collapse-item" href="{{route('admin.sanpham.create')}}">Thêm</a>
           </div>
         </div>
       </li>

@@ -40,9 +40,9 @@ Trang chủ
                 }
             ?>
                 {{$trangThai}}</td>
-            <td><a href="{{ route('admin.loai.edit', ['id' => $loai->l_ma ]) }}" class="btn btn-warning"><i class="fas fa-pen"></i></a></td>
+            <td><a href="{{ route('admin.loai.edit', ['id' => $loai->id ]) }}" class="btn btn-warning"><i class="fas fa-pen"></i></a></td>
             <td>
-                <form name="frmDelete" method="post" action="{{ route('admin.loai.destroy', ['id' => $loai->l_ma ]) }}" class="frmDelete" data-id = "{{ $loai->l_ma }}">
+                <form name="frmDelete" method="post" action="{{ route('admin.loai.destroy', ['id' => $loai->id ]) }}" class="frmDelete" data-id = "{{ $loai->id }}">
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="DELETE">
                     <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>

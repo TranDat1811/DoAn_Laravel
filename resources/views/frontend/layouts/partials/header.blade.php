@@ -60,11 +60,11 @@
 							</li>
 
 							<li>
-								<a href="/about">About</a>
+								<a href="/about">Giới thiệu</a>
 							</li>
 
 							<li>
-								<a href="/contact">Contact</a>
+								<a href="/contact">Liên hệ</a>
 							</li>
 						</ul>
 					</div>	

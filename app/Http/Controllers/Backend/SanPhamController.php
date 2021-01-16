@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Session;
-use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Loai;
-use App\Http\Requests\LoaiCreateRequest;
+use App\SanPham;
 
-class LoaiController extends Controller
+
+class SanPhamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +16,10 @@ class LoaiController extends Controller
      */
     public function index()
     {
-        $ds_loai = Loai::all();
-        return view('backend.loai.index')
-            ->with('ds_loai', $ds_loai)
+        //
+        $ds_sp = SanPham::all();
+        return view('backend.sanpham.index')
+            ->with('ds_sp', $ds_sp)
         ;
     }
 
@@ -32,7 +31,6 @@ class LoaiController extends Controller
     public function create()
     {
         //
-        return view('backend.loai.create');
     }
 
     /**
@@ -41,20 +39,9 @@ class LoaiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LoaiCreateRequest $request)
+    public function store(Request $request)
     {
         //
-        $loai = new Loai();
-        $loai->l_ma = $request->l_ma;
-        $loai->l_ten = $request->l_ten;
-        $loai->l_mota = $request->l_mota;
-        $loai->l_hinhanh = $request->l_hinhanh;
-        $loai->l_trangThai = $request->l_trangThai;
-
-        $loai->save();
-
-        Session::flash('alert-success', "Thêm mới thành công !");
-        return redirect()->route('admin.loai.index');
     }
 
     /**
@@ -76,10 +63,7 @@ class LoaiController extends Controller
      */
     public function edit($id)
     {
-        $loai = Loai::find($id);
-        return view('backend.loai.edit')
-                ->with('loai', $loai)
-        ;
+        //
     }
 
     /**
@@ -91,17 +75,7 @@ class LoaiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $loai = Loai::find($id);
-        $loai->l_ma = $request->l_ma;
-        $loai->l_ten = $request->l_ten;
-        $loai->l_mota = $request->l_mota;
-        $loai->l_hinhanh = $request->l_hinhanh;
-        $loai->l_trangThai = $request->l_trangThai;
-
-        $loai->save();
-
-        Session::flash('alert-success', "Sửa thành công !");
-        return redirect()->route('admin.loai.index');
+        //
     }
 
     /**
@@ -112,10 +86,6 @@ class LoaiController extends Controller
      */
     public function destroy($id)
     {
-        $loai = Loai::find($id);
-        $loai->delete();
-
-        Session::flash('alert-success', "Xoá thành công !");
-        return redirect(route('admin.loai.index'));
+        //
     }
 }

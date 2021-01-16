@@ -16,7 +16,7 @@ class CreateCuscLoaiTable extends Migration
         Schema::create('cusc_loai', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigInteger('id')->autoIncrement()->comment('STT');
-            $table->unsignedTinyInteger('l_ma')->comment('Mã loại sản phẩm');
+            $table->tinyInteger('l_ma')->comment('Mã loại sản phẩm');
             $table->string('l_ten', 50)->comment('Tên loại #Tên loại sản phẩm');
             $table->text('l_mota')->comment('Mô tả về nhà loại sản phẩm #Mô tả về loại sản phẩm ');
             $table->text('l_hinhanh')->comment('Hình ảnh về loại sản phẩm #Hình ảnh về loại sản phẩm');

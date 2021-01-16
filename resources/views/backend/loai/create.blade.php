@@ -21,10 +21,29 @@
 
 <form method="post" action="{{ route('admin.loai.store') }}">
     {{csrf_field()}}
+
+  <div class="form-group col-md-10">
+    <label for="exampleInputEmail1">Mã loại</label>
+    <input type="text" name="l_ma" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+    placeholder="Mã loại" value="{{ old('l_ma') }}">
+    <small id="cd_tenHelp" class="form-text text-muted">Nhập tên loại. Giới hạn trong 50 ký tự.</small>
+  </div>  
   <div class="form-group col-md-10">
     <label for="exampleInputEmail1">Tên Loại</label>
     <input type="text" name="l_ten" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
-    placeholder="Loại" value="{{ old('l_ten') }}">
+    placeholder="Tên loại" value="{{ old('l_ten') }}">
+    <small id="cd_tenHelp" class="form-text text-muted">Nhập tên loại. Giới hạn trong 50 ký tự.</small>
+  </div>
+  <div class="form-group col-md-10">
+    <label for="exampleInputEmail1">Mô tả</label>
+    <input type="text" name="l_mota" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+    placeholder="Mô tả" value="{{ old('l_ten') }}">
+    <small id="cd_tenHelp" class="form-text text-muted">Nhập tên loại. Giới hạn trong 50 ký tự.</small>
+  </div>
+  <div class="form-group col-md-10">
+    <label for="exampleInputEmail1">Hình ảnh</label>
+    <input type="text" name="l_hinhanh" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+    placeholder="" value="{{ old('l_ten') }}">
     <small id="cd_tenHelp" class="form-text text-muted">Nhập tên loại. Giới hạn trong 50 ký tự.</small>
   </div>
   <div class="form-group col-md-4">
