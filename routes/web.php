@@ -18,12 +18,27 @@ Route::get("/admin", function(){
 
 Route::resource('/admin/loai', 'Backend\LoaiController', ['as' => 'admin']);
 Route::resource('/admin/sanpham', 'Backend\SanPhamController', ['as' => 'admin']);
+
+//Các báo cáo
+Route::get('/admin/baocao/donhang', 'Backend\BaoCaoController@donhang')->name('backend.baocao.donhang');
+Route::get('/admin/baocao/donhang/data', 'Backend\BaoCaoController@donhangData')->name('backend.baocao.donhang.data');
+
+
+
+
+
 //End Route Backend 
 
-// Route Frontend
+//---------------------------------------------- Route Frontend------------------------------------------------
 Route::get('/', 'Frontend\FrontendController@index')->name('frontend.pages.index');
 Route::get('/about', 'Frontend\FrontendController@about')->name('frontend.pages.about');
 Route::get('/service', 'Frontend\FrontendController@service')->name('frontend.pages.service');
 Route::get('/contact', 'Frontend\FrontendController@contact')->name('frontend.pages.contact');
 Route::post('/contact/sendmail', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMail');
+
+
+
+
+
+
 // End Route Frontend
