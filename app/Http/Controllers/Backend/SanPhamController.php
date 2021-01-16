@@ -64,6 +64,10 @@ class SanPhamController extends Controller
     public function edit($id)
     {
         //
+        $ds_sp = SanPham::all();
+        return view('backend.sanpham.edit')
+            ->with('ds_sp', $ds_sp)
+        ;
     }
 
     /**

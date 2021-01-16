@@ -11,6 +11,8 @@
 
 @section('main-content')
 
+
+
 <!-- Title page -->
 <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('themes/cozastore/images/bg-01.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
@@ -18,12 +20,13 @@
 		</h2>
 	</section>	
 
-
+	<h2>{{ __('hihi.welcome') }}</h2>
 	<!-- Content page -->
 	<section class="bg0 p-t-104 p-b-116">
 		<div class="container">
 			<div class="flex-w flex-tr">
 				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
+				
 					<form action="{{route ('frontend.contact.sendMail')}}" method="post" name="frmContact">
                         {{csrf_field()}}
 						<h4 class="mtext-105 cl2 txt-center p-b-30">

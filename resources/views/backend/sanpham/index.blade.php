@@ -37,7 +37,7 @@
         <td >
             <img src="{{asset('storage/photos/'.$sp->sp_hinhanh)}}" alt="{{$sp->sp_hinhanh}}" class="sp_hinhanh">
         </td>
-        <td><a class="btn btn-warning"><i class="fas fa-pen"></i</a></td>
+        <td><a class="btn btn-warning" href="{{route('admin.sanpham.edit')}}"><i class="fas fa-pen"></i</a></td>
         <td>
             <form name="frmDelete" method="post" action="{{ route('admin.sanpham.destroy', ['id' => $sp->id ]) }}" class="frmDelete" data-id = "{{ $sp->id }}">
                     {{csrf_field()}}

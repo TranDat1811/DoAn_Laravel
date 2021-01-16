@@ -26,4 +26,12 @@ Route::get('/about', 'Frontend\FrontendController@about')->name('frontend.pages.
 Route::get('/service', 'Frontend\FrontendController@service')->name('frontend.pages.service');
 Route::get('/contact', 'Frontend\FrontendController@contact')->name('frontend.pages.contact');
 Route::post('/contact/sendmail', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMail');
+
+Route::get('setLocale/{locale}', function ($locale) {
+    if (in_array($locale, Config::get('app.locales'))) {
+      Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('app.setLocale');
+
 // End Route Frontend
