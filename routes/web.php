@@ -24,8 +24,6 @@ Route::get('/admin/baocao/donhang', 'Backend\BaoCaoController@donhang')->name('b
 Route::get('/admin/baocao/donhang/data', 'Backend\BaoCaoController@donhangData')->name('backend.baocao.donhang.data');
 
 
-// 123
-
 
 //End Route Backend 
 
@@ -37,7 +35,12 @@ Route::get('/contact', 'Frontend\FrontendController@contact')->name('frontend.pa
 Route::post('/contact/sendmail', 'Frontend\FrontendController@sendMailContactForm')->name('frontend.contact.sendMail');
 
 
-
+Route::get('setLocale/{locale}', function ($locale) {
+    if (in_array($locale, Config::get('app.locales'))) {
+      Session::put('locale', $locale);
+    }
+    return redirect()->back();
+})->name('app.setLocale');
 
 
 
