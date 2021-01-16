@@ -24,7 +24,7 @@ Route::get('/admin/baocao/donhang', 'Backend\BaoCaoController@donhang')->name('b
 Route::get('/admin/baocao/donhang/data', 'Backend\BaoCaoController@donhangData')->name('backend.baocao.donhang.data');
 
 
-
+// 123
 
 
 //End Route Backend 
