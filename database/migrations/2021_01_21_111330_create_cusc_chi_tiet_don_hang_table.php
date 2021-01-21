@@ -18,7 +18,7 @@ class CreateCuscChiTietDonHangTable extends Migration
             $table->bigInteger('dh_ma')->comment('Đơn hàng # dh_ma # dh_ma # Mã đơn hàng');
             $table->bigInteger('sp_ma')->comment('Sản phẩm # sp_ma # sp_ten # Mã sản phẩm');
             $table->Integer('ctdh_soLuong')->default('1')->comment('Số lượng # Số lượng sản phẩm đặt mua');
-            $table->Integer('ctdh_donGia')->default('1')->comment('Đơn giá # Giá bán');
+            $table->decimal('ctdh_donGia', 19, 4)->comment('Đơn giá # Giá bán');
 
             $table->foreign('dh_ma') //cột kh_ma trong bảng cusc_don_hang
                 ->references('dh_ma')->on('cusc_don_hang') //cột kh_ma trong bảng cusc_khach_hang
