@@ -24,8 +24,8 @@ class NhaCungCapTableSeeder extends Seeder
             array_push($list, [
                 'ncc_ma' => $i,
                 'ncc_ten' => $type[$i-1],
-                'ncc_mota' => "Mô tả $i",
-                'ncc_hinhanh' => "ncc-$i.jpg",
+                'ncc_moTa' => "Mô tả $i",
+                'ncc_hinhAnh' => "ncc-$i.jpg",
                 'ncc_taoMoi' => $today ->format('Y-m-d H:i:s'),
                 'ncc_capNhat' => $today ->format('Y-m-d H:i:s')
             ]);
