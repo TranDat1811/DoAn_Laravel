@@ -7,11 +7,38 @@ use App\Http\Controllers\Controller;
 
 class BaoCaoController extends Controller
 {
-    // Hiển thị view báo cáo đơn hàng
-    public function donhang(){
+   /**
+     * Action hiển thị view Báo cáo đơn hàng
+     */
+    public function donhang()
+    {
         return view('backend.reports.donhang');
     }
-    //Ajax để get data cho báo cáo đơn hàng
+
+    /**
+     * Action AJAX get data cho báo cáo Đơn hàng
+     */
+    public function donhangData(Request $request)
+    {
+        $parameter = [
+            'tuNgay' => $request->tuNgay,
+            'denNgay' => $request->denNgay
+        ];
+        // dd($parameter);
+        $data = DB::select('
+            SELECT dh.dh_thoiGianDatHang as thoiGian
+                , SUM(ctdh.ctdh_soLuong * ctdh.ctdh_donGia) as tongThanhTien
+            FROM cusc_don_hang dh
+            JOIN cusc_chi_tiet_don_hang ctdh ON dh.dh_ma = ctdh.dh_ma
+            WHERE dh.dh_thoiGianDatHang BETWEEN :tuNgay AND :denNgay
+            GROUP BY dh.dh_thoiGianDatHang
+        ', $parameter);
+
+        return response()->json(array(
+            'code'  => 200,
+            'data' => $data,
+        ));
+    }
     
 
 }
