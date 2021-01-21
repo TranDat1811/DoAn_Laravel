@@ -18,7 +18,7 @@ Trang chủ
 
 @section('main-content')
 
-<a id="btn_add" href="{{ route('admin.loai.create') }}" class="btn btn-primary">Thêm mới</a>
+<a id="btn_add" href="{{ route('admin.loai.create') }}" style="margin-left:5px; margin-bottom:5px;" class="btn btn-primary">Thêm mới</a>
 <table class="table table-bordered my-table">
     <tr class="thead-dark">
         <th>Mã loại</th>
@@ -51,6 +51,7 @@ Trang chủ
         </tr>
     @endforeach
 </table>
+<ul style="margin-top:5px;" class="pagination justify-content-center">{{$ds_loai->links()}}</ul>
 @endsection
 
 @section('custom-js')
