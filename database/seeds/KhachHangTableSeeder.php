@@ -104,7 +104,7 @@ class KhachHangTableSeeder extends Seeder
                 'kh_hinhDaiDien'=>"khachhang-$i.jpg",
                 'kh_dienThoai' => $phone,
                 'kh_diaChi'    => $address,
-                
+                'kh_ghiNhoDangNhap'=>1,
                 'kh_taoMoi'    => $today->format('Y-m-d H:i:s'),
                 'kh_capNhat'   => $today->format('Y-m-d H:i:s'),
                 'kh_trangThai' => ($i <= $nCustomers-3? 2: 3)
