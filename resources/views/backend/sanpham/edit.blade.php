@@ -1,7 +1,7 @@
 @extends('backend.layouts.master')
 
 @section('title')
-    Thêm sản phẩm
+    Sửa thông tin sản phẩm
 @endsection
 
 @section('custom-css')
@@ -91,7 +91,7 @@
         </select>
     </div>
     <div class="form-group col-md-4">
-        <label for="inputState">Loại</label>
+        <label for="inputState">Nhà cung cấp</label>
         <select name="ncc_ma" id="ncc_ma" class="form-control">Loại
             @foreach($dsNcc as $ncc)
                 <option value="{{$ncc->ncc_ma}}" {{ old('$ncc->ncc_ma', $sp->ncc_ma) == $ncc->ncc_ma ? "selected" : "" }}>{{$ncc->ncc_ten}}</option>

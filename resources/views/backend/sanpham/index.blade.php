@@ -15,6 +15,9 @@
         width: 100px;
         height: 100px;
     }
+    .pagination{
+        margin-top: 5px;
+    }
  </style>
 @endsection
 
