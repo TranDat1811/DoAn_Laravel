@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Loai;
 use App\Http\Requests\LoaiCreateRequest;
+use Storage;
 
 class LoaiController extends Controller
 {
@@ -45,11 +46,20 @@ class LoaiController extends Controller
     {
         //
         $loai = new Loai();
-        $loai->l_ma = $request->l_ma;
         $loai->l_ten = $request->l_ten;
-        $loai->l_mota = $request->l_mota;
-        $loai->l_hinhanh = $request->l_hinhanh;
+        $loai->l_moTa = $request->l_moTa;
         $loai->l_trangThai = $request->l_trangThai;
+
+        if($request->hasFile('l_hinhAnh'))
+        {
+            $file = $request->l_hinhAnh;
+
+            // Lưu tên hình vào column sp_hinh
+            $loai->l_hinhAnh = $file->getClientOriginalName();
+            
+            // Chép file vào thư mục "photos"
+            $fileSaved = $file->storeAs('public/photos/loai', $loai->l_hinhAnh);
+        }
 
         $loai->save();
 
@@ -92,12 +102,23 @@ class LoaiController extends Controller
     public function update(Request $request, $id)
     {
         $loai = Loai::find($id);
-        $loai->l_ma = $request->l_ma;
         $loai->l_ten = $request->l_ten;
-        $loai->l_mota = $request->l_mota;
-        $loai->l_hinhanh = $request->l_hinhanh;
+        $loai->l_moTa = $request->l_moTa;
         $loai->l_trangThai = $request->l_trangThai;
 
+        if($request->hasFile('l_hinhAnh'))
+        {
+            // Xóa hình cũ để tránh rác
+            Storage::delete('public/photos/loai' . $loai->l_hinhAnh);
+
+            // Upload hình mới
+            // Lưu tên hình vào column l_hinhAnh
+            $file = $request->l_hinhAnh;
+            $loai->l_hinhAnh = $file->getClientOriginalName();
+            
+            // Chép file vào thư mục "photos/loai"
+            $fileSaved = $file->storeAs('public/photos/loai', $loai->l_hinhAnh);
+        }
         $loai->save();
 
         Session::flash('alert-success', "Sửa thành công !");

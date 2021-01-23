@@ -12,24 +12,33 @@ Trang chủ
 #btn_add{
     
 }
+
+.small_img{
+    width: 150px;
+    height: 70px;
+}
 </style>
 @endsection
 
 
 @section('main-content')
 
-<a id="btn_add" href="{{ route('admin.loai.create') }}" style="margin-left:5px; margin-bottom:5px;" class="btn btn-primary">Thêm mới</a>
+<ul class=" pagination justify-content-center"><a id="btn_add" href="{{ route('admin.loai.create') }}" class="btn btn-primary ">Thêm mới</a></ul>
 <table class="table table-bordered my-table">
     <tr class="thead-dark">
-        <th>Mã loại</th>
+        
         <th>Tên loại</th>
+        <th>Hình ảnh</th>
         <th>Trạng thái</th>
         <th colspan="2">#</th>
     </tr>
     @foreach ($ds_loai as $loai)
         <tr>
-            <td>{{$loai->l_ma}}</td>
+            
             <td>{{$loai->l_ten}}</td>
+            <td>
+                <img src="{{asset('storage/photos/loai/'. $loai->l_hinhAnh) }}" alt="{{$loai->l_hinhAnh}}" class="small_img">
+            </td>
             <td><?php
                 $trangThai = '';
                 if($loai->l_trangThai==1){
@@ -40,9 +49,9 @@ Trang chủ
                 }
             ?>
                 {{$trangThai}}</td>
-            <td><a href="{{ route('admin.loai.edit', ['id' => $loai->id ]) }}" class="btn btn-warning"><i class="fas fa-pen"></i></a></td>
+            <td><a href="{{ route('admin.loai.edit', ['id' => $loai->l_ma ]) }}" class="btn btn-warning"><i class="fas fa-pen"></i></a></td>
             <td>
-                <form name="frmDelete" method="post" action="{{ route('admin.loai.destroy', ['id' => $loai->id ]) }}" class="frmDelete" data-id = "{{ $loai->id }}">
+                <form name="frmDelete" method="post" action="{{ route('admin.loai.destroy', ['id' => $loai->l_ma ]) }}" class="frmDelete" data-id = "{{ $loai->l_ma }}">
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="DELETE">
                     <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
@@ -51,7 +60,7 @@ Trang chủ
         </tr>
     @endforeach
 </table>
-<ul style="margin-top:5px;" class="pagination justify-content-center">{{$ds_loai->links()}}</ul>
+<ul class="pagination justify-content-center">{{$ds_loai->links()}}</ul>
 @endsection
 
 @section('custom-js')

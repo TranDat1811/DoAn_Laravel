@@ -17,11 +17,11 @@ class CreateCuscSanPhamTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigInteger('sp_ma')->autoIncrement()->comment('Mã sản phẩm');
             $table->string('sp_ten', 50)->comment('Tên sản phẩm #Tên sản phẩm');
-            $table->text('sp_hinhAnh')->comment('Hình đại diện sản phẩm #Hình đại diện sản phẩm');
-            $table->text('sp_moTa_ngan')->comment('Mô tả ngắn về sản phẩm #Mô tả ngắn về sản phẩm');
-            $table->text('sp_moTa')->comment('Mô tả về sản phẩm #Mô tả về sản phẩm');
-            $table->decimal('sp_giaNhap', 19, 4)->comment('Giá tiêu chuẩn sản phẩm #Giá tiêu chuẩn sản phẩm');
-            $table->decimal('sp_giaBan', 19, 4)->comment('Giá niêm yết sản phẩm #Giá niêm yết sản phẩm');
+            $table->text('sp_hinhAnh')->nullable()->comment('Hình đại diện sản phẩm #Hình đại diện sản phẩm');
+            $table->text('sp_moTa_ngan')->nullable()->comment('Mô tả ngắn về sản phẩm #Mô tả ngắn về sản phẩm');
+            $table->text('sp_moTa')->nullable()->comment('Mô tả về sản phẩm #Mô tả về sản phẩm');
+            $table->decimal('sp_giaNhap', 19, 4)->comment('Giá nhập sản phẩm #Giá nhập sản phẩm');
+            $table->decimal('sp_giaBan', 19, 4)->comment('Giá bán sản phẩm #Giá bán sản phẩm');
             $table->string('sp_soLuong', 50)->comment('Số lượng mỗi sản phẩm #Số lượng mỗi sản phẩm');
             $table->boolean('sp_noiBat')->default(true)->comment('Sản phẩm nổi bật');
             $table->boolean('sp_moi')->default(true)->comment('Sản phẩm mới');

@@ -17,8 +17,8 @@ class CreateCuscLoaiTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigInteger('l_ma')->autoIncrement()->comment('Mã loại sản phẩm');
             $table->string('l_ten', 50)->comment('Tên loại #Tên loại sản phẩm');
-            $table->text('l_mota')->comment('Mô tả về nhà loại sản phẩm #Mô tả về loại sản phẩm ');
-            $table->text('l_hinhAnh')->comment('Hình ảnh về loại sản phẩm #Hình ảnh về loại sản phẩm');
+            $table->string('l_moTa', 500)->nullable()->comment('Mô tả về nhà loại sản phẩm #Mô tả về loại sản phẩm ');
+            $table->string('l_hinhAnh', 200)->nullable()->comment('Hình ảnh về loại sản phẩm #Hình ảnh về loại sản phẩm');
             $table->timestamp('l_taoMoi')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm tạo # Thời điểm đầu tiên tạo loại sản phẩm');
             $table->timestamp('l_capNhat')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Thời điểm cập nhật # Thời điểm cập nhật loại sản phẩm gần nhất');
             $table->tinyInteger('l_trangThai')->default('2')->comment('Trạng thái # Trạng thái loại sản phẩm: 1-khóa, 2-khả dụng');
