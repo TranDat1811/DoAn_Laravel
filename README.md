@@ -39,12 +39,5 @@ php artisan db:seed
 - Tạo domain ảo với <doanlaravel.local>
 
 ## Step 6: thông tin tài khoản truy cập hệ thống
-Tài khoản Admin:
-admin / 123456
 
-Tài khoản Quản lý kho:
-kho / 123456
-
-Tài khoản Khách hàng:
-khachhang / 123456
 ...
